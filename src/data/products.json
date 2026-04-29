@@ -1,0 +1,182 @@
+[
+  {
+    "id": "dress-1",
+    "name": "الأناقة الرمادية",
+    "description": "جوارب رسمية من القطن المصري، رقيقة ومتينة. مثالية لمرافقة بدلاتك وملابسك الرسمية بلمسة من الرقي.",
+    "price": 1200,
+    "originalPrice": 2400,
+    "category": "رسمية",
+    "image": "/images/dress_socks_1776818409215.png",
+    "images": [
+      "/images/dress_socks_1776818409215.png",
+      "/images/hero_socks_1776818384864.png",
+      "/images/casual_socks_1776818539673.png"
+    ],
+    "colors": [
+      "رمادي داكن",
+      "أسود",
+      "أزرق بحري"
+    ],
+    "sizes": [
+      "39-42",
+      "43-46"
+    ],
+    "isFeatured": true,
+    "badge": "وفر 1,200 د.ج"
+  },
+  {
+    "id": "sport-1",
+    "name": "الرياضية البيضاء",
+    "description": "جوارب رياضية مدعمة عند الكعب وأصابع القدم. قطن يسمح بمرور الهواء ودعم مثالي لقوس القدم لتمارينك المكثفة.",
+    "price": 900,
+    "originalPrice": 1800,
+    "category": "رياضية",
+    "image": "/images/sport_socks_1776818516641.png",
+    "images": [
+      "/images/sport_socks_1776818516641.png",
+      "/images/hero_socks_1776818384864.png",
+      "/images/dress_socks_1776818409215.png"
+    ],
+    "colors": [
+      "أبيض/رمادي",
+      "أسود",
+      "أبيض/أزرق"
+    ],
+    "sizes": [
+      "35-38",
+      "39-42",
+      "43-46"
+    ],
+    "isFeatured": true,
+    "badge": "وفر 900 د.ج"
+  },
+  {
+    "id": "dress-2",
+    "name": "الكلاسيكية البحرية",
+    "description": "الجوارب الزرقاء البحرية التي لا غنى عنها. أساسية ومريحة وتدوم طويلاً للاستخدام اليومي في المكتب.",
+    "price": 1000,
+    "originalPrice": 2000,
+    "category": "رسمية",
+    "image": "/images/dress_socks_1776818409215.png",
+    "images": [
+      "/images/dress_socks_1776818409215.png",
+      "/images/hero_socks_1776818384864.png"
+    ],
+    "colors": [
+      "أزرق بحري"
+    ],
+    "sizes": [
+      "39-42",
+      "43-46"
+    ],
+    "badge": "وفر 1,000 د.ج"
+  },
+  {
+    "id": "sport-2",
+    "name": "الأداء العالي",
+    "description": "جوارب جري قصيرة وخفيفة للغاية. تحسين التخلص من العرق.",
+    "price": 800,
+    "category": "رياضية",
+    "image": "/images/sport_socks_1776818516641.png",
+    "images": [
+      "/images/sport_socks_1776818516641.png",
+      "/images/hero_socks_1776818384864.png"
+    ],
+    "colors": [
+      "أبيض"
+    ],
+    "sizes": [
+      "35-38",
+      "39-42"
+    ]
+  },
+  {
+    "id": "casual-2",
+    "name": "خطوط خريفية",
+    "description": "جوارب يومية مخططة بألوان دافئة. مثالية لإطلالة مريحة في عطلة نهاية الأسبوع.",
+    "price": 1100,
+    "originalPrice": 1900,
+    "category": "يومية",
+    "image": "/images/casual_socks_1776818539673.png",
+    "images": [
+      "/images/casual_socks_1776818539673.png",
+      "/images/dress_socks_1776818409215.png"
+    ],
+    "colors": [
+      "مخطط"
+    ],
+    "sizes": [
+      "39-42",
+      "43-46"
+    ],
+    "badge": "وفر 800 د.ج"
+  },
+  {
+    "name": "Puma",
+    "description": "جوارب puma ",
+    "price": 500,
+    "originalPrice": 1000,
+    "category": "يومية",
+    "image": "/images/1777402100482-Gemini_Generated_Image_phcxokphcxokphcx.png",
+    "images": [],
+    "colors": [
+      "اسود",
+      "رمادي",
+      "ابيض"
+    ],
+    "sizes": [
+      "39-42",
+      "42-45"
+    ],
+    "isFeatured": true,
+    "isNew": true,
+    "badge": "",
+    "id": "product-1777400274032"
+  },
+  {
+    "name": "Eden Park",
+    "description": "Eden Park",
+    "price": 500,
+    "originalPrice": 1000,
+    "category": "يومية",
+    "image": "/images/1777403830636-Gemini_Generated_Image_6ytfhg6ytfhg6ytf.png",
+    "images": [],
+    "colors": [
+      "اسود",
+      "ابيض",
+      "رمادي"
+    ],
+    "sizes": [
+      "39-42",
+      "42-45"
+    ],
+    "isFeatured": true,
+    "isNew": false,
+    "badge": "",
+    "id": "product-1777403840119"
+  },
+  {
+    "name": "gucci",
+    "description": "gucci",
+    "price": 500,
+    "originalPrice": 1000,
+    "category": "يومية",
+    "image": "/images/1777425127701-Gemini_Generated_Image_x1pquux1pquux1pq.png",
+    "images": [],
+    "colors": [
+      "اسود",
+      "ابيض",
+      "رمادي"
+    ],
+    "sizes": [
+      "30-34",
+      "34-48",
+      "39-42",
+      "42-45"
+    ],
+    "isFeatured": false,
+    "isNew": false,
+    "badge": "",
+    "id": "product-1777425211032"
+  }
+]
