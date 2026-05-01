@@ -1,45 +1,52 @@
-import fs from "fs";
-import path from "path";
+import { supabase } from "@/lib/supabaseClient";
 
 export interface Order {
   id: string;
-  customerName: string;
+  user_name: string; // Mis à jour pour correspondre à ta colonne SQL
   phone: string;
   wilaya: string;
-  commune: string;
   address: string;
-  deliveryMode: string;
-  items: any[];
   total: number;
+  items: any[];
   status: "pending" | "confirmed" | "shipped" | "delivered" | "cancelled";
-  createdAt: string;
+  created_at: string; // Mis à jour pour correspondre à Supabase
 }
 
-const ordersFilePath = path.join(process.cwd(), "src/data/orders.json");
-
-export function getOrders(): Order[] {
+// Récupère toutes les commandes depuis Supabase
+export async function getOrders(): Promise<Order[]> {
   try {
-    if (!fs.existsSync(ordersFilePath)) {
+    const { data, error } = await supabase
+      .from('orders')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      console.error("Erreur lors de la récupération des commandes:", error.message);
       return [];
     }
-    const data = fs.readFileSync(ordersFilePath, "utf8");
-    return JSON.parse(data);
+
+    return data || [];
   } catch (error) {
-    console.error("Error reading orders:", error);
+    console.error("Erreur imprévue:", error);
     return [];
   }
 }
 
-export function saveOrders(orders: Order[]): boolean {
+// Ajoute une nouvelle commande dans Supabase
+export async function addOrder(orderData: Omit<Order, 'id' | 'created_at'>): Promise<boolean> {
   try {
-    const dir = path.dirname(ordersFilePath);
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true });
+    const { error } = await supabase
+      .from('orders')
+      .insert([orderData]);
+
+    if (error) {
+      console.error("Erreur lors de l'ajout de la commande:", error.message);
+      return false;
     }
-    fs.writeFileSync(ordersFilePath, JSON.stringify(orders, null, 2));
+
     return true;
   } catch (error) {
-    console.error("Error saving orders:", error);
+    console.error("Erreur imprévue lors de l'ajout:", error);
     return false;
   }
 }
