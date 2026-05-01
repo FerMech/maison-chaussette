@@ -242,5 +242,28 @@
     "total": 1300,
     "status": "pending",
     "createdAt": "2026-05-01T02:37:25.950Z"
+  },
+  {
+    "id": "ORD-1777644700005",
+    "customerName": "sa",
+    "phone": "0665790954",
+    "wilaya": "بشار",
+    "commune": "بني يخلف",
+    "address": "",
+    "deliveryMode": "office",
+    "items": [
+      {
+        "id": "sport-2",
+        "name": "الأداء العالي",
+        "price": 800,
+        "image": "/images/sport_socks_1776818516641.png",
+        "quantity": 1,
+        "selectedSize": "39-42",
+        "selectedColor": "أبيض"
+      }
+    ],
+    "total": 1200,
+    "status": "pending",
+    "createdAt": "2026-05-01T14:11:40.005Z"
   }
 ]

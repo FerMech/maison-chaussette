@@ -30,7 +30,7 @@ export default function AdminDashboard() {
   const [activeCategory, setActiveCategory] = useState("الكل");
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
   const [confirmDelete, setConfirmDelete] = useState<string | null>(null);
-  
+
   // Category form state
   const [newCatName, setNewCatName] = useState("");
   const [catActionLoading, setCatActionLoading] = useState(false);
@@ -47,7 +47,7 @@ export default function AdminDashboard() {
         fetch("/api/categories"),
         fetch("/api/orders")
       ]);
-      
+
       if (prodRes.ok) setProducts(await prodRes.json());
       if (catRes.ok) setCategories(await catRes.json());
       if (orderRes.ok) setOrders(await orderRes.json());
@@ -157,29 +157,26 @@ export default function AdminDashboard() {
       <div className="container mx-auto px-4 md:px-6">
         {/* Tabs */}
         <div className="flex gap-1 mb-8 bg-muted p-1 rounded-xl w-fit border border-border">
-          <button 
+          <button
             onClick={() => setActiveTab("products")}
-            className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${
-              activeTab === "products" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
-            }`}
+            className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${activeTab === "products" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
+              }`}
           >
             <Package className="w-4 h-4" />
             المنتجات
           </button>
-          <button 
+          <button
             onClick={() => setActiveTab("categories")}
-            className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${
-              activeTab === "categories" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
-            }`}
+            className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${activeTab === "categories" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
+              }`}
           >
             <LayoutGrid className="w-4 h-4" />
             الفئات
           </button>
-          <button 
+          <button
             onClick={() => setActiveTab("orders")}
-            className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${
-              activeTab === "orders" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
-            }`}
+            className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${activeTab === "orders" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
+              }`}
           >
             <ShoppingCart className="w-4 h-4" />
             الطلبات
@@ -191,9 +188,8 @@ export default function AdminDashboard() {
 
         {/* Alerts */}
         {message && (
-          <div className={`mb-6 p-4 rounded-xl flex items-center gap-3 animate-fade-in ${
-            message.type === "success" ? "bg-green-50 text-green-700 border border-green-200" : "bg-red-50 text-red-700 border border-red-200"
-          }`}>
+          <div className={`mb-6 p-4 rounded-xl flex items-center gap-3 animate-fade-in ${message.type === "success" ? "bg-green-50 text-green-700 border border-green-200" : "bg-red-50 text-red-700 border border-red-200"
+            }`}>
             {message.type === "success" ? <CheckCircle2 className="w-5 h-5" /> : <AlertCircle className="w-5 h-5" />}
             <span className="font-medium">{message.text}</span>
           </div>
@@ -218,9 +214,8 @@ export default function AdminDashboard() {
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
-                      activeCategory === cat ? "bg-foreground text-background shadow-md" : "bg-muted text-muted-foreground hover:bg-muted/80"
-                    }`}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${activeCategory === cat ? "bg-foreground text-background shadow-md" : "bg-muted text-muted-foreground hover:bg-muted/80"
+                      }`}
                   >
                     {cat}
                   </button>
@@ -311,16 +306,16 @@ export default function AdminDashboard() {
             <div className="bg-background p-6 rounded-2xl border border-border shadow-sm">
               <h3 className="text-lg font-bold text-foreground mb-4">إضافة فئة جديدة</h3>
               <form onSubmit={handleAddCategory} className="flex gap-3">
-                <input 
-                  type="text" 
-                  value={newCatName} 
+                <input
+                  type="text"
+                  value={newCatName}
                   onChange={(e) => setNewCatName(e.target.value)}
                   placeholder="اسم الفئة الجديد..."
                   className="flex-1 px-4 py-3 border border-border bg-background text-foreground rounded-xl focus:outline-none focus:border-primary"
                   required
                 />
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   disabled={catActionLoading}
                   className="bg-primary text-primary-foreground px-8 py-3 rounded-xl font-bold hover:opacity-90 transition-all disabled:opacity-50"
                 >
@@ -344,7 +339,7 @@ export default function AdminDashboard() {
                         <span className="font-bold text-foreground">{cat.name}</span>
                       </td>
                       <td className="px-6 py-4 text-left">
-                        <button 
+                        <button
                           onClick={() => handleDeleteCategory(cat.id)}
                           className="p-2 text-muted-foreground hover:text-red-500 transition-colors"
                         >
@@ -376,31 +371,44 @@ export default function AdminDashboard() {
                           <span className="px-2.5 py-0.5 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-500 rounded-full text-[10px] font-bold uppercase">قيد الانتظار</span>
                         </div>
                         <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                          <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {new Date(order.createdAt).toLocaleString('ar-DZ')}</span>
+                          <span className="flex items-center gap-1">
+                            <Clock className="w-3 h-3" />
+                            {order.created_at ? new Date(order.created_at).toLocaleString('ar-DZ') : 'تاريخ غير معروف'}
+                          </span>
                         </div>
                       </div>
                       <div className="text-xl font-bold text-primary">
                         {formatPrice(order.total)}
                       </div>
                     </div>
-                    
+
                     <div className="p-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
                       {/* Customer Info */}
                       <div className="space-y-4">
                         <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-wider">معلومات الزبون</h4>
                         <div className="space-y-2">
-                          <p className="font-bold text-foreground text-lg">{order.customerName}</p>
+                          <p className="font-bold text-foreground text-lg">{order.user_name || "بدون اسم"}</p>
                           <p className="flex items-center gap-2 text-muted-foreground font-medium">
                             <Phone className="w-4 h-4 text-muted-foreground" /> {order.phone}
                           </p>
                           <div className="p-3 bg-muted rounded-xl border border-border text-sm text-muted-foreground">
-                            <p className="font-bold text-foreground">{order.wilaya} - {order.commune}</p>
-                            <p className="mt-1">{order.address}</p>
-                            <p className="mt-2 text-[10px] bg-background border border-border w-fit px-2 py-0.5 rounded text-muted-foreground">طريقة التوصيل: {order.deliveryMode === 'home' ? 'للمنزل' : 'مكتب التوصيل'}</p>
+
+                            <p className="font-bold text-foreground">
+                              {order.wilaya} {order.commune && `- ${order.commune}`}
+                            </p>
+
+
+                            <p className="mt-1">
+                              {order.address && order.address !== "EMPTY" ? order.address : "العنوان غير محدد"}
+                            </p>
+
+                            <p className="mt-2 text-[10px] bg-background border border-border w-fit px-2 py-0.5 rounded text-muted-foreground">
+                              طريقة التوصيل: {order.deliveryMode === 'home' ? 'للمنزل' : 'مكتب التوصيل'}
+                            </p>
                           </div>
                         </div>
                       </div>
-                      
+
                       {/* Order Items */}
                       <div className="lg:col-span-2 space-y-4">
                         <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-wider">المنتجات ({order.items.length})</h4>
