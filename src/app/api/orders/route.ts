@@ -28,6 +28,7 @@ export async function POST(request: NextRequest) {
           user_name: body.customerName,
           phone: body.phone,
           wilaya: body.wilaya,
+          commune: body.commune, // <--- AJOUTEZ CETTE LIGNE ICI
           address: body.address, // Tu peux combiner adresse + commune si besoin
           total: body.total,
           items: body.items, // JSONB accepte directement l'objet
